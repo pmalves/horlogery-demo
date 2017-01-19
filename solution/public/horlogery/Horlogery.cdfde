@@ -2716,7 +2716,7 @@
      {
       "name": "bootstrapExtraSmall",
       "type": "String",
-      "value": "3"
+      "value": "4"
      },
      {
       "name": "bootstrapSmall",
@@ -2736,7 +2736,7 @@
      {
       "name": "bootstrapCssClass",
       "type": "String",
-      "value": ""
+      "value": "col-xs-offset-4"
      },
      {
       "name": "height",
