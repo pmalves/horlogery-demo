@@ -22,8 +22,8 @@
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[select {Measures.Turnover} ON COLUMNS,
-       {[Group].[Group].Members} ON ROWS
-       from [Horlogery]]]></Query>
+      <Query><![CDATA[select {[Measures].[Turnover]} ON COLUMNS,
+  {Order([Group].[Group].Members, [Measures].[Turnover], ASC)} ON ROWS
+from [Horlogery]]]></Query>
    </DataAccess>
 </CDADescriptor>
