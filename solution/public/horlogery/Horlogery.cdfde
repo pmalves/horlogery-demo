@@ -162,7 +162,7 @@
      {
       "name": "htmlObject",
       "type": "HtmlObject",
-      "value": "${h:testTable}"
+      "value": "${h:brandsTableObj}"
      },
      {
       "name": "executeAtStart",
@@ -296,7 +296,7 @@
      {
       "name": "htmlObject",
       "type": "HtmlObject",
-      "value": "${h:testChart}"
+      "value": "${h:groupsBarChartObj}"
      },
      {
       "name": "executeAtStart",
@@ -1667,6 +1667,199 @@
     "rowName": "CCC Bar Chart",
     "type": "ComponentscccBarChart",
     "typeDesc": "CCC Bar Chart"
+   },
+   {
+    "id": "SELECTORS",
+    "name": "Selects",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Selects",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "0c17edd1-8aba-0196-eb08-e37be7fa4f72",
+    "type": "ComponentsFilterComponent",
+    "typeDesc": "Filter Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "groupFilter",
+      "type": "Id"
+     },
+     {
+      "name": "title",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameter",
+      "value": "",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "outputFormat",
+      "value": "lowestID",
+      "type": "outputFormatCustom"
+     },
+     {
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "alwaysExpanded",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "multiselect",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "selectionLimit",
+      "value": 200,
+      "type": "Integer"
+     },
+     {
+      "name": "pageSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "showIcons",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "showButtonOnlyThis",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "useOverlay",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "showFilter",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${h:groupsFilterCol}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postUpdate",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "renderRootHeader",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "renderRootSelection",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "renderRootFooter",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "renderGroupSelection",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "renderItemSelection",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "sortGroup",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "sortItem",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "options",
+      "value": "function options(){\n    return {};\n}",
+      "type": "JavaScript"
+     }
+    ],
+    "rowName": "Filter Component"
    }
   ]
  },
@@ -1912,7 +2105,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": "headerImg"
+      "value": "header"
      },
      {
       "name": "height",
@@ -1937,7 +2130,7 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": ""
+      "value": "header"
      }
     ],
     "type": "LayoutRow",
@@ -1950,7 +2143,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": "imageHeader"
+      "value": "headerCol"
      },
      {
       "name": "bootstrapExtraSmall",
@@ -1975,12 +2168,12 @@
      {
       "name": "bootstrapCssClass",
       "type": "String",
-      "value": ""
+      "value": "headerColPh"
      },
      {
       "name": "height",
       "type": "Integer",
-      "value": 300
+      "value": ""
      },
      {
       "name": "backgroundColor",
@@ -2000,7 +2193,7 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": ""
+      "value": "headerCol"
      }
     ],
     "type": "LayoutBootstrapColumn",
@@ -2018,7 +2211,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "teste "
+      "value": "<div class=\"headerTitle\">\r\n    <h1>Horlogery</h1>\r\n    <h2>Sales Overview</h2>\r\n</div> "
      },
      {
       "name": "fontSize",
@@ -2040,18 +2233,119 @@
     "typeDesc": "Html"
    },
    {
-    "id": "d4047863-9f5c-6e52-d6bc-ea60057932ba",
+    "id": "fa3ec3d0-0cf3-fb8f-311e-ba1a97f133e1",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "filters",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "filters",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "fe116532-2cd6-3e6e-ec0f-5210d62e2d1c",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "fa3ec3d0-0cf3-fb8f-311e-ba1a97f133e1",
+    "properties": [
+     {
+      "name": "name",
+      "value": "groupsFilterCol",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "3",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "groupsFilterCol",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "448b5342-0ca5-1991-ccdd-75440f0366ed",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "name",
       "type": "Id",
-      "value": "Brands"
+      "value": "groupsBarChart"
      },
      {
       "name": "height",
       "type": "Integer",
-      "value": 300
+      "value": ""
      },
      {
       "name": "backgroundColor",
@@ -2071,7 +2365,209 @@
      {
       "name": "cssClass",
       "type": "String",
+      "value": "groupsBarChart"
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "46e8a9c8-0587-f199-7e0b-c55eb87e2ae0",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "448b5342-0ca5-1991-ccdd-75440f0366ed",
+    "properties": [
+     {
+      "name": "name",
+      "value": "groupsBarChartObj",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "groupsBarChartObj",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "847ac042-599d-4157-4276-336cc0c86e87",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "kpiBar",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "kpiBar",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "35cf920e-3e0d-69dd-c0c6-8803313aa032",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "847ac042-599d-4157-4276-336cc0c86e87",
+    "properties": [
+     {
+      "name": "name",
+      "value": "kpiBarTableObj",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "kpiBarTableObj",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "d4047863-9f5c-6e52-d6bc-ea60057932ba",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "brandsTable"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
       "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "brandsTable"
      }
     ],
     "type": "LayoutRow",
@@ -2084,7 +2580,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": "testTable"
+      "value": "brandsTableObj"
      },
      {
       "name": "bootstrapExtraSmall",
@@ -2114,7 +2610,7 @@
      {
       "name": "height",
       "type": "Integer",
-      "value": 300
+      "value": ""
      },
      {
       "name": "backgroundColor",
@@ -2134,49 +2630,183 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": ""
+      "value": "brandsTableObj"
      }
     ],
     "type": "LayoutBootstrapColumn",
     "typeDesc": "Column"
    },
    {
-    "id": "448b5342-0ca5-1991-ccdd-75440f0366ed",
+    "id": "ecb218e8-bda1-d5f5-0951-ec490899494b",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "name",
-      "type": "Id",
-      "value": "testChart"
+      "value": "relatedArticles",
+      "type": "Id"
      },
      {
       "name": "height",
-      "type": "Integer",
-      "value": 300
+      "value": "",
+      "type": "Integer"
      },
      {
       "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
+      "value": "",
+      "type": "Color"
      },
      {
       "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
+      "value": "",
+      "type": "RoundCorners"
      },
      {
       "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
+      "value": "",
+      "type": "TextAlign"
      },
      {
       "name": "cssClass",
-      "type": "String",
-      "value": ""
+      "value": "relatedArticles",
+      "type": "String"
      }
-    ],
+    ]
+   },
+   {
+    "id": "8e20d533-c58e-b52b-07ab-8cffa51fcae2",
     "type": "LayoutRow",
-    "typeDesc": "Row"
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "footer",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "footer",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "bc61ede4-23bf-2c8f-a228-7d4ff79b547c",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "8e20d533-c58e-b52b-07ab-8cffa51fcae2",
+    "properties": [
+     {
+      "name": "name",
+      "value": "footerCol",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "footerCol",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "0703bb88-5fce-eb7b-e23b-45829cfbab43",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "bc61ede4-23bf-2c8f-a228-7d4ff79b547c",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Built by Pentaho, A Hitachi Group Company ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
    }
   ],
   "title": "CDF - Sample structure"

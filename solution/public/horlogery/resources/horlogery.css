@@ -1,17 +1,132 @@
-html > body{
-    background-color: #cccccc;   
+/* ==================
+   GENERAL STYLES
+================== */
+
+html > body {
+    background: #63605E;
 }
 
-.container{
-    
-    background-color: #ffffff;
-    z-index: 100;
+body > .container {
+    background: #FFF;
+    box-shadow: 0 0px 15px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 0px 15px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 0px 15px rgba(0,0,0,0.2);
 }
 
-#imageHeader{
-    
-    background: no-repeat url('/pentaho-style/images/dufour.jpg');
-    z-index:200;
-    
-    
+
+/* ==================
+   HEADER
+================== */
+
+.headerColPh {
+    background: url('/pentaho-style/images/dufour.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.headerColPh:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.5);
+    width: 100%;
+    height: 100%;
+}
+
+.headerCol {
+    height: 500px;
+    position: relative;
+}
+
+.headerTitle {
+    color: #FFF;
+    text-align: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    width: 500px;
+    height: 120px;
+    z-index: 1;
+}
+
+.headerTitle h1 {
+    font-size: 56px;
+    line-height: 1.5;
+    font-weight: 700;
+    margin: 0;
+}
+
+.headerTitle h2 {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 500;
+    margin: 0;
+}
+
+
+/* ==================
+   FILTERS
+================== */
+
+.filters {
+    background: #F3F3F3;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+/* ==================
+   GROUPS BAR CHART
+================== */
+
+.groupsBarChart {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+/* ==================
+   KPI BAR
+================== */
+
+.kpiBar {
+    height: 200px;
+    background: url('/pentaho-style/images/dufour.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+
+/* ==================
+   BRANDS TABLE
+================== */
+
+.brandsTable {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+/* ==================
+   RELATED ARTICLES
+================== */
+
+.relatedArticles {
+}
+
+
+/* ==================
+   FOOTER
+================== */
+
+.footer {
+    background: #222;
+    color: #EAEAEA;
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.5;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
