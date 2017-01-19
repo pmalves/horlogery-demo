@@ -16,11 +16,12 @@ MAINTAINER  Pedro Alves <palves@pentaho.com>
 ADD solution.zip /pentaho
 RUN mv /pentaho/solution.zip /pentaho/*server*/pentaho-solutions/system/default-content/
 
-ADD ratings.list.gz /tmp/
+#ADD ratings.list.gz /tmp/
 
 ADD patches/ /pentaho/patches
-#RUN sudo chown -R pentaho.pentaho /pentaho/patches && \
-#		cp -R /pentaho/patches/* /pentaho/*server*/
+
+RUN sudo chown -R pentaho.pentaho /pentaho/patches && \
+		cp -R /pentaho/patches/* /pentaho/*server*/
 
 # Configure mondrian logs
 
