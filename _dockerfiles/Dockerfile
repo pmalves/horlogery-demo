@@ -21,7 +21,7 @@ RUN mv /pentaho/solution.zip /pentaho/*server*/pentaho-solutions/system/default-
 ADD patches/ /pentaho/patches
 
 RUN sudo chown -R pentaho.pentaho /pentaho/patches && \
-		cp -R /pentaho/patches/* /pentaho/*server*/ &&
+		cp -R /pentaho/patches/* /pentaho/*server*/ && \
 		cp patches/tomcat/webapps/pentaho-style/data/data.xslx /tmp
 
 # Configure mondrian logs
