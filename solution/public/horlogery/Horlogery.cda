@@ -1,29 +1,56 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CDADescriptor>
-   <DataSources>
-      <Connection id="brands" type="sql.jndi">
-         <Jndi>Horlogery</Jndi>
-      </Connection>
-      <Connection id="topBrands" type="mondrian.jndi">
-         <Catalog>mondrian:/Horlogery</Catalog>
-         <Jndi>Horlogery</Jndi>
-      </Connection>
-   </DataSources>
-   <DataAccess access="public" connection="brands" id="brands" type="sql">
-      <Name>brands</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT Group, Brand, Turnover  FROM "Horlogery"]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="topBrands" id="topBrands" type="mdx">
-      <Name>topBrands</Name>
-      <BandedMode>compact</BandedMode>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[select {[Measures].[Turnover]} ON COLUMNS,
+<?xml version="1.0" encoding="UTF-8"?><CDADescriptor>
+  <DataSources>
+    <Connection id="brands" type="sql.jndi">
+      <Jndi>Horlogery</Jndi>
+    </Connection>
+    <Connection id="topBrands" type="mondrian.jndi">
+      <Catalog>mondrian:/Horlogery</Catalog>
+      <Jndi>Horlogery</Jndi>
+    </Connection>
+    <Connection id="kpiTableData" type="scripting.scripting">
+      <Initscript/>
+      <Language>beanshell</Language>
+    </Connection>
+  </DataSources>
+  <DataAccess access="public" connection="brands" id="brands" type="sql">
+    <Name>brands</Name>
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters/>
+    <Query><![CDATA[SELECT Group, Brand, Turnover  FROM "Horlogery"]]></Query>
+  </DataAccess>
+  <DataAccess access="public" connection="topBrands" id="topBrands" type="mdx">
+    <Name>topBrands</Name>
+    <BandedMode>compact</BandedMode>
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters/>
+    <Query><![CDATA[select {[Measures].[Turnover]} ON COLUMNS,
   {Order([Group].[Group].Members, [Measures].[Turnover], ASC)} ON ROWS
 from [Horlogery]]]></Query>
-   </DataAccess>
+  </DataAccess>
+  <DataAccess access="public" connection="kpiTableData" id="kpiTableData" type="scriptable">
+    <Name>kpiTableData</Name>
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters/>
+    <Query><![CDATA[import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;
+
+String[] columnNames = new String[]{
+"Turnover","Sold Pieces","Avg. Price per Piece"
+};
+
+
+Class[] columnTypes = new Class[]{
+String.class,
+String.class,
+String.class
+};
+
+TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
+
+model.addRow(new Object[]{ new String("$22,321m"), new String("27,073k"), new String("$15,240") });
+
+return model;]]></Query>
+  </DataAccess>
 </CDADescriptor>

@@ -97,9 +97,42 @@ body > .container {
 ================== */
 
 .kpiBar {
-    height: 200px;
-    background: url('/pentaho-style/images/dufour.jpg') no-repeat center center;
+    background: url('/pentaho-style/images/kpi-background.jpg') no-repeat center center;
     background-size: cover;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.kpiBar table {
+    border: 0 none;
+}
+
+.kpiBar table > tbody > tr.odd,
+.kpiBar table > tbody > tr.even {
+    background: none;
+}
+
+.kpiBar table > thead > tr > th,
+.kpiBar table > tbody > tr > td,
+.kpiBar table > tbody > tr.odd > td,
+.kpiBar table > tbody > tr.even > td {
+    color: #FFF;
+    text-align: center;
+    background: none;
+    padding: 0;
+    border: 0 none;
+    line-height: 1.5;
+}
+
+.kpiBar table > thead > tr > th {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.kpiBar table > tbody > tr > td {
+    font-size: 48px;
+    font-weight: 600;
 }
 
 
@@ -127,7 +160,7 @@ body > .container {
 
 .footer {
     background: #222;
-    color: #EAEAEA;
+    color: #FFF;
     font-size: 12px;
     text-align: center;
     line-height: 1.5;
