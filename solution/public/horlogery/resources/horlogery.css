@@ -2,29 +2,30 @@
    GENERAL STYLES
 ================== */
 
-html > body {
+.horlogery {
     background: #63605E;
-}
-
-body > .container {
     font-size: 16px;
     font-weight: 1.5;
+}
+
+.horlogery > .container {
+    min-width: 1170px;
     background: #FFF;
     box-shadow: 0 0px 15px rgba(0,0,0,0.2);
     -moz-box-shadow: 0 0px 15px rgba(0,0,0,0.2);
     -webkit-box-shadow: 0 0px 15px rgba(0,0,0,0.2);
 }
 
-.container {
-    min-width: 1170px;
-}
-
-h1 {
+.horlogery h1 {
     margin: 0 0 24px;
 }
 
-p {
+.horlogery p {
     margin: 16px 0;
+}
+
+.horlogery p:last-child {
+    margin-bottom: 0;
 }
 
 
@@ -32,12 +33,12 @@ p {
    HEADER
 ================== */
 
-.headerColPh {
+.horlogery .headerColPh {
     background: url('/pentaho-style/images/dufour.jpg') no-repeat center center;
     background-size: cover;
 }
 
-.headerColPh:after {
+.horlogery .headerColPh:after {
     content: '';
     position: absolute;
     top: 0;
@@ -47,12 +48,12 @@ p {
     height: 100%;
 }
 
-.headerCol {
+.horlogery .headerCol {
     height: 500px;
     position: relative;
 }
 
-.headerTitle {
+.horlogery .headerTitle {
     color: #FFF;
     text-align: center;
     top: 0;
@@ -66,14 +67,14 @@ p {
     z-index: 1;
 }
 
-.headerTitle h1 {
+.horlogery .headerTitle h1 {
     font-size: 56px;
     line-height: 1.5;
     font-weight: 700;
     margin: 0;
 }
 
-.headerTitle h2 {
+.horlogery .headerTitle h2 {
     font-size: 24px;
     line-height: 1.5;
     font-weight: 500;
@@ -85,7 +86,7 @@ p {
    INTRODUCTION
 ================== */
 
-.introductionCol {
+.horlogery .introductionCol {
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -95,7 +96,7 @@ p {
    FILTERS
 ================== */
 
-.filters {
+.horlogery .filters {
     background: #F3F3F3;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -106,7 +107,7 @@ p {
    GROUPS BAR CHART
 ================== */
 
-.groupsBarChart {
+.horlogery .groupsBarChart {
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -116,7 +117,7 @@ p {
    KPI BAR
 ================== */
 
-.kpiBar {
+.horlogery .kpiBar {
     background: url('/pentaho-style/images/kpi-background.jpg') no-repeat center center;
     background-size: cover;
     padding-top: 50px;
@@ -124,19 +125,19 @@ p {
     position: relative;
 }
 
-.kpiBar table {
+.horlogery .kpiBar table {
     border: 0 none;
 }
 
-.kpiBar table > tbody > tr.odd,
-.kpiBar table > tbody > tr.even {
+.horlogery .kpiBar table > tbody > tr.odd,
+.horlogery .kpiBar table > tbody > tr.even {
     background: none;
 }
 
-.kpiBar table > thead > tr > th,
-.kpiBar table > tbody > tr > td,
-.kpiBar table > tbody > tr.odd > td,
-.kpiBar table > tbody > tr.even > td {
+.horlogery .kpiBar table > thead > tr > th,
+.horlogery .kpiBar table > tbody > tr > td,
+.horlogery .kpiBar table > tbody > tr.odd > td,
+.horlogery .kpiBar table > tbody > tr.even > td {
     color: #FFF;
     text-align: center;
     background: none;
@@ -145,12 +146,12 @@ p {
     line-height: 1.5;
 }
 
-.kpiBar table > thead > tr > th {
+.horlogery .kpiBar table > thead > tr > th {
     font-size: 16px;
     font-weight: 400;
 }
 
-.kpiBar table > tbody > tr > td {
+.horlogery .kpiBar table > tbody > tr > td {
     font-size: 48px;
     font-weight: 600;
 }
@@ -160,7 +161,7 @@ p {
    BRANDS TABLE
 ================== */
 
-.brandsTable {
+.horlogery .brandsTable {
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -170,7 +171,7 @@ p {
    RELATED ARTICLES
 ================== */
 
-.relatedArticles {
+.horlogery .relatedArticles {
 }
 
 
@@ -178,7 +179,7 @@ p {
    FOOTER
 ================== */
 
-.footer {
+.horlogery .footer {
     background: #222;
     color: #FFF;
     font-size: 12px;
