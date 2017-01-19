@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="brands" type="sql.jndi">
+         <Jndi>Horlogery</Jndi>
+      </Connection>
+      <Connection id="topBrands" type="mondrian.jndi">
+         <Catalog>mondrian:/Horlogery</Catalog>
+         <Jndi>Horlogery</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="brands" id="brands" type="sql">
+      <Name>brands</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT Group, Brand, Turnover  FROM "Horlogery"]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="topBrands" id="topBrands" type="mdx">
+      <Name>topBrands</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select {Measures.Turnover} ON COLUMNS,
+       {[Group].[Group].Members} ON ROWS
+       from [Horlogery]]]></Query>
+   </DataAccess>
+</CDADescriptor>

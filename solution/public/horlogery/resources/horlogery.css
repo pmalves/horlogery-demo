@@ -1,3 +1,17 @@
-body{
-    background-color: #666666;   
+html > body{
+    background-color: #cccccc;   
+}
+
+.container{
+    
+    background-color: #ffffff;
+    z-index: 100;
+}
+
+#imageHeader{
+    
+    background: no-repeat url('/pentaho-style/images/dufour.jpg');
+    z-index:200;
+    
+    
 }
