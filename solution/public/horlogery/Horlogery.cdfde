@@ -1,0 +1,60 @@
+{
+ "components": {
+  "rows": []
+ },
+ "datasources": {
+  "rows": []
+ },
+ "filename": "/public/horlogery/Horlogery.cdfde",
+ "layout": {
+  "rows": [
+   {
+    "id": "a8a54903-2455-097f-bda5-f19212a794e7",
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "js",
+      "type": "Id"
+     },
+     {
+      "name": "resourceFile",
+      "value": "${solution:resources/horlogery.js}",
+      "type": "ResourceFile"
+     },
+     {
+      "name": "resourceType",
+      "value": "Javascript",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "68e80c22-ab93-1022-16b9-a274cff526ed",
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "css",
+      "type": "Id"
+     },
+     {
+      "name": "resourceFile",
+      "value": "${solution:resources/horlogery.css}",
+      "type": "ResourceFile"
+     },
+     {
+      "name": "resourceType",
+      "value": "Css",
+      "type": "Label"
+     }
+    ]
+   }
+  ],
+  "title": "CDF - Sample structure"
+ }
+}

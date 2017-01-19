@@ -30,6 +30,8 @@ RUN perl -ibak -p0e 's#(</log4j:configuration>)#   <category name="mondrian">   
  perl -ibak -p0e 's/(PENTAHOCONSOLE.*?value=.)(?:ERROR|INFO)/$1DEBUG/s' /pentaho/*server*/tomcat/webapps/pentaho/WEB-INF/classes/log4j.xml
 
 
+# Enable marketplace on EE
+RUN perl -ibak -p0e 's/pentaho-big-data-ee-plugin-osgi-obf/pentaho-big-data-ee-plugin-osgi-obf,pentaho-marketplace/' /pentaho/*server*/pentaho-solutions/system/karaf/etc/org.apache.karaf.features.cfg
 
 # Allow fonts to be imported
 
