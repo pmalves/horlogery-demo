@@ -28,6 +28,10 @@
     margin-bottom: 0;
 }
 
+.horlogery .lightBackground {    
+    background: #F3F3F3;
+}
+
 
 /* ==================
    HEADER
@@ -98,19 +102,24 @@
 ================== */
 
 .horlogery .filters {
-    background: #F3F3F3;
     padding-top: 50px;
     padding-bottom: 50px;
 }
 
 
 /* ==================
-   GROUPS BAR CHART
+   CHARTS
 ================== */
 
-.horlogery .groupsBarChart {
+.horlogery .groupsBarChart,
+.horlogery .salesQuantityChart {
     padding-top: 50px;
     padding-bottom: 50px;
+}
+
+.horlogery .chartTitle {
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 
