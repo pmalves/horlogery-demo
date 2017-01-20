@@ -500,7 +500,7 @@
      {
       "name": "template",
       "type": "JavaScript",
-      "value": "function f(){\n    var template = ''+\n        '<div class=\"templateWrapper clearfix\">' +\n        '   {{#items}} ' +\n        '       <div class=\"templateRow\">' +\n        '           {{{0}}}'+\n        '       </div>' +\n        '   {{/items}} '+\n        '</div>';\n      return template; \n} "
+      "value": "function f(){\n    var template = ''+\n        '<div class=\"templateWrapper row clearfix\">' +\n        '   {{#items}} ' +\n        '       <div class=\"col-xs-6\">' +\n        '           <div class=\"article-content\">' +\n        '               {{{0}}}'+\n        '           </div>' +\n        '       </div>' +\n        '   {{/items}} '+\n        '</div>';\n      return template; \n} "
      },
      {
       "name": "templateType",
@@ -6754,7 +6754,7 @@
      {
       "name": "height",
       "type": "Integer",
-      "value": 300
+      "value": ""
      },
      {
       "name": "backgroundColor",
