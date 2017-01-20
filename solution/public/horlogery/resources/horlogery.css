@@ -112,8 +112,9 @@
 ================== */
 
 .horlogery .filters {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    z-index: 1000;
 }
 
 .horlogery .filters .filter-root-container {
@@ -123,8 +124,6 @@
 .horlogery .filters .filter-title {
     display: none;
 }
-
-
 
 .horlogery .filters .filter-root-header {
     border-color: #EAEAEA;
