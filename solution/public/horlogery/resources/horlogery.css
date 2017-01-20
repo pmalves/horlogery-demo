@@ -459,6 +459,11 @@
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     margin: 0 0 30px 0;
+    padding: 15px;
+}
+
+.horlogery .relatedArticles .templateRow img {
+    max-width: 100%;
 }
 
 .horlogery .relatedArticles .templateRow:nth-child(odd) {
