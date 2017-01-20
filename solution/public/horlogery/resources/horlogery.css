@@ -130,6 +130,7 @@
 .horlogery .chartTitle {
     font-weight: 600;
     margin-bottom: 20px;
+    font-size: 24px;
 }
 
 
@@ -184,6 +185,128 @@
 .horlogery .brandsTable {
     padding-top: 50px;
     padding-bottom: 50px;
+}
+
+.horlogery .brandsTable .dataTables_length,
+.horlogery .brandsTable .dataTables_filter {
+    display: none;
+}
+
+.horlogery .brandsTable table {
+    border: 0 none;
+}
+
+.horlogery .brandsTable table > thead > tr > th,
+.horlogery .brandsTable table > tbody > tr > td,
+.horlogery .brandsTable table > tbody > tr.odd > td,
+.horlogery .brandsTable table > tbody > tr.even > td {
+    padding: 0 25px;
+    border: 0 none;
+    line-height: 1.5;
+}
+
+.horlogery .brandsTable table > thead:first-child > tr:first-child > th {
+    background: none;
+    border-bottom: 2px solid #F3F3F3;
+    border-top: 2px solid #F3F3F3;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    outline: 0 none;
+}
+
+.horlogery .brandsTable table > tbody > tr.odd > td,
+.horlogery .brandsTable table > tbody > tr.even > td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.horlogery .brandsTable table > tbody > tr.even > td {
+    background: #F3F3F3;
+}
+
+.horlogery .brandsTable table > tbody > tr.odd > td {
+    background: #F9F9F9;
+}
+
+.horlogery .brandsTable table > thead > tr > th:after {
+    position: relative;
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 10px;
+    background: url(img/sort-arrows.svg) no-repeat left center;
+    margin-left: 10px;
+}
+
+.horlogery .brandsTable table > thead > tr > th.sorting_asc:after {
+    background-position: right center;
+}
+
+.horlogery .brandsTable table > thead > tr > th.sorting_desc:after {
+    background-position: center center;
+}
+
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button:link,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.current:link,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button:visited,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.current:visited,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button:active,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.current:active,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button:focus,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.current:focus {
+    border: 1px solid #F3F3F3;
+    background: none;
+    filter: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    outline: 0 none;
+    padding: 4px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #000 !important;
+}
+
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.current:link,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.current:visited,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button:active,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.current:active,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button:focus,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.current:focus {
+    border-color: #000;
+}
+
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.current:link,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.current:visited,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.current:active,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.current:focus {
+    font-weight: 700;
+}
+
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
+.horlogery .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    color: #CCC !important;
+    border: 1px solid #F3F3F3;
+    opacity: .8;
+}
+
+.horlogery .dataTables_wrapper .dataTables_paginate {
+    margin-top: 10px;
+}
+
+.horlogery .dataTables_wrapper .dataTables_info {
+    font-size: 12px;
+    margin-top: 11px;
 }
 
 
