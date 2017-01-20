@@ -14,7 +14,7 @@
         </parameters>
     </ExportManifestMondrian>
 
-    <ExportManifestMetadata domainId="Horlogery" file="BioMe EHR.xmi"/>
+    <ExportManifestMetadata domainId="Horlogery" file="Horlogery.xmi"/>
 
 		<ExportManifestDatasource>
         <accessType>NATIVE</accessType>
