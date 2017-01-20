@@ -1,56 +1,161 @@
-<?xml version="1.0" encoding="UTF-8"?><CDADescriptor>
-  <DataSources>
-    <Connection id="brands" type="sql.jndi">
-      <Jndi>Horlogery</Jndi>
-    </Connection>
-    <Connection id="topBrands" type="mondrian.jndi">
-      <Catalog>mondrian:/Horlogery</Catalog>
-      <Jndi>Horlogery</Jndi>
-    </Connection>
-    <Connection id="kpiTableData" type="scripting.scripting">
-      <Initscript/>
-      <Language>beanshell</Language>
-    </Connection>
-  </DataSources>
-  <DataAccess access="public" connection="brands" id="brands" type="sql">
-    <Name>brands</Name>
-    <Cache duration="3600" enabled="true"/>
-    <Columns/>
-    <Parameters/>
-    <Query><![CDATA[SELECT Group, Brand, Turnover  FROM "Horlogery"]]></Query>
-  </DataAccess>
-  <DataAccess access="public" connection="topBrands" id="topBrands" type="mdx">
-    <Name>topBrands</Name>
-    <BandedMode>compact</BandedMode>
-    <Cache duration="3600" enabled="true"/>
-    <Columns/>
-    <Parameters/>
-    <Query><![CDATA[select {[Measures].[Turnover]} ON COLUMNS,
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="brands" type="sql.jndi">
+         <Jndi>Horlogery</Jndi>
+      </Connection>
+      <Connection id="groups" type="mondrian.jndi">
+         <Catalog>mondrian:/Horlogery</Catalog>
+         <Jndi>Horlogery</Jndi>
+      </Connection>
+      <Connection id="brandsAvg" type="mondrian.jndi">
+         <Catalog>mondrian:/Horlogery</Catalog>
+         <Jndi>Horlogery</Jndi>
+      </Connection>
+      <Connection id="brandsPieces" type="mondrian.jndi">
+         <Catalog>mondrian:/Horlogery</Catalog>
+         <Jndi>Horlogery</Jndi>
+      </Connection>
+      <Connection id="brandsTurnover" type="mondrian.jndi">
+         <Catalog>mondrian:/Horlogery</Catalog>
+         <Jndi>Horlogery</Jndi>
+      </Connection>
+      <Connection id="kpiTableData" type="mondrian.jndi">
+         <Catalog>mondrian:/Horlogery</Catalog>
+         <Jndi>Horlogery</Jndi>
+      </Connection>
+      <Connection id="tableQuery" type="mondrian.jndi">
+         <Catalog>mondrian:/Horlogery</Catalog>
+         <Jndi>Horlogery</Jndi>
+      </Connection>
+      <Connection id="topBrands" type="mondrian.jndi">
+         <Catalog>mondrian:/Horlogery</Catalog>
+         <Jndi>Horlogery</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="brands" id="brands" type="sql">
+      <Name>brands</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT Group, Brand, Turnover  FROM "Horlogery"]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="groups" id="groups" type="mdx">
+      <Name>groups</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="1,0" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[with set groups as DESCENDANTS([Group].[All Groups],1,SELF_AND_BEFORE)
+member Measures.groupName as Group.currentMember.UniqueName
+select NON EMPTY {[Measures].[groupName]} ON COLUMNS,
+  NON EMPTY groups ON ROWS
+from [Horlogery]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="brandsAvg" id="brandsAvg" type="mdx">
+      <Name>brandsAvg</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="[Group].[All Groups]" name="group" type="String"/>
+      </Parameters>
+      <Query><![CDATA[with set brands as DESCENDANTS(${group},Group.Brand,SELF)
+
+select NON EMPTY {[Measures].[Avg Price Per Piece]} ON COLUMNS,
+  NON EMPTY Order(Head(Order( brands, Measures.[Avg Price Per Piece], BDESC),20),Measures.[Avg Price Per Piece],BASC) ON ROWS
+
+from [Horlogery]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="brandsPieces" id="brandsPieces" type="mdx">
+      <Name>brandsPieces</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="[Group].[All Groups]" name="group" type="String"/>
+      </Parameters>
+      <Query><![CDATA[with set brands as DESCENDANTS(${group},Group.Brand,SELF)
+
+select NON EMPTY {[Measures].[Pieces]} ON COLUMNS,
+  NON EMPTY Head(Order( brands, Measures.Pieces, BDESC),20) ON ROWS
+from [Horlogery]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="brandsTurnover" id="brandsTurnover" type="mdx">
+      <Name>brandsTurnover</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="[Group].[All Groups]" name="group" type="String"/>
+      </Parameters>
+      <Query><![CDATA[with set brands as DESCENDANTS(${group},Group.Brand,SELF)
+
+select NON EMPTY {[Measures].[Turnover]} ON COLUMNS,
+  NON EMPTY Order(Head(Order( brands, Measures.Turnover, BDESC),20),Measures.Turnover,BASC) ON ROWS
+from [Horlogery]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="kpiTableData" id="kpiTableData" type="mdx">
+      <Name>kpiTableData</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="1">
+            <Name>Turnover (MM CHF)</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Pieces (MM)</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="group" name="group" type="String"/>
+      </Parameters>
+      <Query><![CDATA[with set brands as DESCENDANTS(${group},Group.Brand,SELF)
+member Measures.Brands as brands.count
+member Measures.FormattedPieces as Format([Measures].Pieces/1000000,'#.#')
+select NON EMPTY {
+  [Measures].[Turnover],
+  [Measures].[FormattedPieces],
+  [Measures].Brands
+} ON COLUMNS,
+  ${group} on ROWS
+from [Horlogery]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="tableQuery" id="tableQuery" type="mdx">
+      <Name>tableQuery</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="1">
+            <Name>Turnover (MM CHF)</Name>
+         </Column>
+         <Column idx="3">
+            <Name>Average Piece Price (x1000 CHF)</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="[Group].[All Groups]" name="group" type="String"/>
+      </Parameters>
+      <Query><![CDATA[with set brands as Order(DESCENDANTS(${group},Group.Brand,SELF),[Measures].Turnover,BDESC)
+member Measures.Group as [Group].parent.name
+select NON EMPTY {
+  -- [Measures].[Group],
+  [Measures].[Turnover],
+  [Measures].[Pieces],
+  [Measures].[Avg Price Per Piece]
+} ON COLUMNS,
+  brands on ROWS
+from [Horlogery]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="topBrands" id="topBrands" type="mdx">
+      <Name>topBrands</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select {[Measures].[Turnover]} ON COLUMNS,
   {Order([Group].[Group].Members, [Measures].[Turnover], ASC)} ON ROWS
 from [Horlogery]]]></Query>
-  </DataAccess>
-  <DataAccess access="public" connection="kpiTableData" id="kpiTableData" type="scriptable">
-    <Name>kpiTableData</Name>
-    <Cache duration="3600" enabled="true"/>
-    <Columns/>
-    <Parameters/>
-    <Query><![CDATA[import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;
-
-String[] columnNames = new String[]{
-"Turnover","Sold Pieces","Avg. Price per Piece"
-};
-
-
-Class[] columnTypes = new Class[]{
-String.class,
-String.class,
-String.class
-};
-
-TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
-
-model.addRow(new Object[]{ new String("$22,321m"), new String("27,073k"), new String("$15,240") });
-
-return model;]]></Query>
-  </DataAccess>
+   </DataAccess>
 </CDADescriptor>
