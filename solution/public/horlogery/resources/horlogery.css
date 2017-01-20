@@ -292,7 +292,11 @@
     background: #F9F9F9;
 }
 
-.horlogery .brandsTable table > thead > tr > th:after {
+.horlogery .brandsTable table td.numeric {
+    text-align: right;
+}
+
+.horlogery .brandsTable table > thead > tr > th:not(.numeric):after {
     position: relative;
     content: '';
     display: inline-block;
@@ -302,11 +306,23 @@
     margin-left: 10px;
 }
 
-.horlogery .brandsTable table > thead > tr > th.sorting_asc:after {
+.horlogery .brandsTable table > thead > tr > th.numeric:before {
+    position: relative;
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 10px;
+    background: url(img/sort-arrows.svg) no-repeat left center;
+    margin-right: 10px;
+}
+
+.horlogery .brandsTable table > thead > tr > th.sorting_asc:after,
+.horlogery .brandsTable table > thead > tr > th.sorting_asc:before {
     background-position: right center;
 }
 
-.horlogery .brandsTable table > thead > tr > th.sorting_desc:after {
+.horlogery .brandsTable table > thead > tr > th.sorting_desc:after,
+.horlogery .brandsTable table > thead > tr > th.sorting_desc:before {
     background-position: center center;
 }
 
