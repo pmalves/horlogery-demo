@@ -36,6 +36,7 @@
 .horlogery .headerColPh {
     background: url('/pentaho-style/images/dufour.jpg') no-repeat center center;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .horlogery .headerColPh:after {
