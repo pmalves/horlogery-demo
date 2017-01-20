@@ -299,7 +299,7 @@
     background: #F9F9F9;
 }
 
-.horlogery .brandsTable table td.numeric {
+.horlogery .brandsTable table .numeric {
     text-align: right;
 }
 
