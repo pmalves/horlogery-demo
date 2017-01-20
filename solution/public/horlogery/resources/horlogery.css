@@ -65,8 +65,11 @@
     padding-right: 35px;
 }
 
-.horlogery h1 {
+.horlogery .sectionTitle {
+    font-weight: 600;
     margin: 0 0 24px;
+    font-size: 24px;
+    text-align: center;
 }
 
 .horlogery p {
@@ -79,6 +82,11 @@
 
 .horlogery .lightBackground {    
     background: #F3F3F3;
+}
+
+.horlogery .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 
@@ -145,9 +153,8 @@
    INTRODUCTION
 ================== */
 
-.horlogery .introductionCol {
-    padding-top: 50px;
-    padding-bottom: 50px;
+.horlogery .introduction .sectionTitle {
+    text-align: left;
 }
 
 
@@ -236,19 +243,6 @@
    CHARTS
 ================== */
 
-.horlogery .groupsBarChart,
-.horlogery .salesQuantityChart {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.horlogery .chartTitle {
-    font-weight: 600;
-    margin-bottom: 20px;
-    font-size: 24px;
-    text-align: center;
-}
-
 
 /* ==================
    KPI BAR
@@ -257,8 +251,6 @@
 .horlogery .kpiBar {
     background: url('/pentaho-style/images/kpi-background.jpg') no-repeat center center;
     background-size: cover;
-    padding-top: 50px;
-    padding-bottom: 50px;
     position: relative;
 }
 
@@ -297,11 +289,6 @@
 /* ==================
    BRANDS TABLE
 ================== */
-
-.horlogery .brandsTable {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
 
 .horlogery .brandsTable .dataTables_length,
 .horlogery .brandsTable .dataTables_filter {

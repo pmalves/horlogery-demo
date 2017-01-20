@@ -5360,7 +5360,7 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": ""
+      "value": "introduction section"
      }
     ],
     "type": "LayoutRow",
@@ -5441,7 +5441,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<h1>Pentaho Demo</h1>\n<p>\n    A very simple, and I dare to say sexy, example of a Pentaho CTools dashboard\n    that uses a lot of the capabilities of the platform.\n</p>\n<p>\n    Consider this data ficticious; It's simply estimates taken from \n    <a href=\"http://www.watch-insider.com/economy/figures-figures-figures-estimated-watches-sold-estimated-turnover-major-watch-brands-switzerland-germany/\" target=\"_blank\">this article</a>. \n    Comments are powered by <a href=\"http://disqus.com\" target=\"_blank\">Disqus</a> and the related content comes from <a href=\"https://www.hodinkee.com/\" target=\"_blank\">Hodinkee's</a>\n    <a href=\"http://tumblr.hodinkee.com/\">Tumblr</a>.\n</p>\n<p>You can freely explore the dataset in <a href=\"/pentaho/api/repos/xanalyzer/editor?catalog=Horlogery&cube=Horlogery\" target=\"_blank\">Pentaho Analyzer</a>.</p> "
+      "value": "<div class=\"sectionTitle\">Pentaho Demo</div>\n<p>\n    A very simple, and I dare to say sexy, example of a Pentaho CTools dashboard\n    that uses a lot of the capabilities of the platform.\n</p>\n<p>\n    Consider this data ficticious; It's simply estimates taken from \n    <a href=\"http://www.watch-insider.com/economy/figures-figures-figures-estimated-watches-sold-estimated-turnover-major-watch-brands-switzerland-germany/\" target=\"_blank\">this article</a>. \n    Comments are powered by <a href=\"http://disqus.com\" target=\"_blank\">Disqus</a> and the related content comes from <a href=\"https://www.hodinkee.com/\" target=\"_blank\">Hodinkee's</a>\n    <a href=\"http://tumblr.hodinkee.com/\">Tumblr</a>.\n</p>\n<p>You can freely explore the dataset in <a href=\"/pentaho/api/repos/xanalyzer/editor?catalog=Horlogery&cube=Horlogery\" target=\"_blank\">Pentaho Analyzer</a>.</p> "
      },
      {
       "name": "fontSize",
@@ -5595,7 +5595,7 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": "groupsBarChart"
+      "value": "groupsBarChart section"
      }
     ],
     "type": "LayoutRow",
@@ -5658,7 +5658,7 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": "groupsBarChartTitle chartTitle"
+      "value": "groupsBarChartTitle sectionTitle"
      }
     ],
     "type": "LayoutBootstrapColumn",
@@ -5792,7 +5792,7 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": "kpiBar"
+      "value": "kpiBar section"
      }
     ],
     "type": "LayoutRow",
@@ -5893,7 +5893,7 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": "salesWrapper lightBackground"
+      "value": "salesWrapper section lightBackground"
      }
     ],
     "type": "LayoutRow",
@@ -6057,7 +6057,7 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": "salesQuantityChartTitle chartTitle"
+      "value": "salesQuantityChartTitle sectionTitle"
      }
     ],
     "type": "LayoutBootstrapColumn",
@@ -6254,7 +6254,7 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": "salesQuantityChart"
+      "value": "salesAvgChart"
      }
     ],
     "type": "LayoutRow",
@@ -6317,7 +6317,7 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": "salesQuantityChartTitle chartTitle"
+      "value": "salesQuantityChartTitle sectionTitle"
      }
     ],
     "type": "LayoutBootstrapColumn",
@@ -6451,7 +6451,7 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": "brandsTable "
+      "value": "brandsTable section"
      }
     ],
     "type": "LayoutRow",
@@ -6514,7 +6514,7 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": "brandsTableTitle chartTitle"
+      "value": "brandsTableTitle sectionTitle"
      }
     ],
     "type": "LayoutBootstrapColumn",
@@ -6648,7 +6648,7 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": "relatedArticles"
+      "value": "relatedArticles section lightBackground"
      }
     ],
     "type": "LayoutRow",
@@ -6711,7 +6711,7 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": "brandsTableTitle chartTitle"
+      "value": "brandsTableTitle sectionTitle"
      }
     ],
     "type": "LayoutBootstrapColumn",
@@ -6812,7 +6812,7 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": "comments"
+      "value": "comments section"
      }
     ],
     "type": "LayoutRow",
