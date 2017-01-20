@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:ExportManifest xmlns:ns2="http://www.pentaho.com/schema/">
+    <ExportManifestInformation exportDate="24-09-2016 05:43:49 WEST" exportBy="admin" rootFolder="/]"/>
+
+    <ExportManifestMondrian file="Horlogery.mondrian.xml">
+        <catalogName>Horlogery</catalogName>
+        <xmlaEnabled>false</xmlaEnabled>
+        <parameters>
+            <entries>
+                <entry key="Provider" value="mondrian"/>
+                <entry key="DataSource" value="Horlogery"/>
+                <entry key="EnableXmla" value="false"/>
+            </entries>
+        </parameters>
+    </ExportManifestMondrian>
+
+    <ExportManifestMetadata domainId="Horlogery" file="BioMe EHR.xmi"/>
+
+		<ExportManifestDatasource>
+        <accessType>NATIVE</accessType>
+        <accessTypeValue>NATIVE</accessTypeValue>
+        <attributes>
+            <entry>
+                <key>PORT_NUMBER</key>
+                <value>8080</value>
+            </entry>
+        </attributes>
+        <changed>false</changed>
+        <connectSql></connectSql>
+        <connectionPoolingProperties/>
+        <dataTablespace></dataTablespace>
+        <databaseName>Data Services</databaseName>
+        <databasePort>8080</databasePort>
+        <databaseType>
+            <defaultDatabaseName>Data Services</defaultDatabaseName>
+            <defaultDatabasePort>8080</defaultDatabasePort>
+            <defaultOptions>
+                <entry>
+                    <key>KettleThin.webappname</key>
+                    <value>pentaho</value>
+                </entry>
+            </defaultOptions>
+            <extraOptionsHelpUrl>https://help.pentaho.com/Documentation/5.1/0L0/0Y0/0G0</extraOptionsHelpUrl>
+            <name>Pentaho Data Services</name>
+            <shortName>KettleThin</shortName>
+            <supportedAccessTypes>NATIVE</supportedAccessTypes>
+            <supportedAccessTypes>JNDI</supportedAccessTypes>
+        </databaseType>
+        <extraOptions>
+            <entry>
+                <key>KettleThin.webappname</key>
+                <value>pentaho</value>
+            </entry>
+        </extraOptions>
+        <forcingIdentifiersToLowerCase>false</forcingIdentifiersToLowerCase>
+        <forcingIdentifiersToUpperCase>false</forcingIdentifiersToUpperCase>
+        <hostname>127.0.0.1</hostname>
+        <id>dc0c9d51-7ba3-49d6-9f88-956500f183af</id>
+        <indexTablespace></indexTablespace>
+        <informixServername></informixServername>
+        <initialPoolSize>0</initialPoolSize>
+        <maximumPoolSize>0</maximumPoolSize>
+        <name>Horlogery</name>
+        <partitioned>false</partitioned>
+        <password>password</password>
+        <quoteAllFields>false</quoteAllFields>
+        <streamingResults>false</streamingResults>
+        <username>admin</username>
+        <usingConnectionPool>true</usingConnectionPool>
+        <usingDoubleDecimalAsSchemaTableSeparator>false</usingDoubleDecimalAsSchemaTableSeparator>
+    </ExportManifestDatasource>
+</ns2:ExportManifest>

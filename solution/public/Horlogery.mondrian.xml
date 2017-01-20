@@ -1,0 +1,34 @@
+<Schema name="Horlogery">
+  <Dimension name="Group">
+    <Hierarchy hasAll="true">
+      <Table name="Horlogery" schema="Kettle"/>
+      <Level name="Group" uniqueMembers="false" column="Group" type="String">
+      </Level>
+      <Level name="Brand" uniqueMembers="false" column="Brand" type="String">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension name="Date" type="TimeDimension">
+    <Hierarchy hasAll="true">
+      <Table name="Horlogery" schema="Kettle"/>
+      <Level name="Year" uniqueMembers="false" column="Year" levelType="TimeYears" type="Numeric">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension name="Media">
+    <Hierarchy hasAll="true">
+      <Table name="Horlogery" schema="Kettle"/>
+      <Level name="Tag" uniqueMembers="false" column="Media Tag" type="String">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Cube name="Horlogery">
+    <Table name="Horlogery" schema="Kettle"/>
+    <DimensionUsage name="Group" source="Group"/>
+    <DimensionUsage name="Date" source="Date"/>
+    <DimensionUsage name="Media" source="Media"/>
+    <Measure name="Pieces" column="Pieces" aggregator="sum" description="Pieces sold"/>
+    <Measure name="Turnover" column="Turnover" aggregator="sum" formatString="&#x23;,&#x23;&#x23;&#x23;.000"/>
+    <Measure name="Avg Price Per Piece" column="avgPrice" aggregator="avg" formatString="&#x23;,&#x23;&#x23;&#x23;.00"/>
+  </Cube>
+</Schema>
