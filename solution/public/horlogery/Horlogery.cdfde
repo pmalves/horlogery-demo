@@ -4927,7 +4927,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with set brands as DESCENDANTS(${group},Group.Brand,SELF)\nmember Measures.Brands as brands.count\nmember Measures.FormattedPieces as Format([Measures].Pieces/1000000,'#.#')\nselect NON EMPTY {\n  [Measures].[Turnover],\n  [Measures].[FormattedPieces],\n  [Measures].Brands\n} ON COLUMNS,\n  ${group} on ROWS\nfrom [Horlogery]\n"
+      "value": "with set brands as DESCENDANTS(${group},Group.Brand,SELF)\nmember Measures.Brands as brands.count\nmember Measures.FormattedPieces as Format([Measures].Pieces/1000000,'#.#')\nselect NON EMPTY {\n  [Measures].[Turnover],\n  [Measures].[FormattedPieces],\n  [Measures].Brands\n} ON COLUMNS,\n  ${group} on ROWS\nfrom [Horlogery]"
      },
      {
       "name": "parameters",
@@ -4952,12 +4952,12 @@
      {
       "name": "output",
       "type": "IndexArray",
-      "value": "[]"
+      "value": "[\"0\"]"
      },
      {
       "name": "outputMode",
       "type": "OutputMode",
-      "value": "include"
+      "value": "exclude"
      },
      {
       "name": "cacheKeys",
@@ -5307,7 +5307,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<div class=\"headerTitle\">\r\n    <h1>Horlogery</h1>\r\n    <h2>Sales Overview</h2>\r\n</div> "
+      "value": "<div class=\"headerTitle\">\r\n    <h1>Horlogery</h1>\r\n    <h2>2013 Sales Overview</h2>\r\n</div> "
      },
      {
       "name": "fontSize",
@@ -5441,7 +5441,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<h1>This is the title</h1>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et libero quis ex congue tristique. Mauris id sem at lacus bibendum pulvinar. Phasellus finibus ornare nulla vitae ornare. Aliquam volutpat nisi felis, quis vulputate enim sodales sed. Etiam eros purus, gravida sit amet enim a, vulputate sollicitudin diam.</p>\n<p>Morbi arcu eros, rutrum at ligula a, rutrum volutpat libero. Sed facilisis, mi ac dignissim bibendum, tellus dui auctor tellus, sed ultrices ante nunc sit amet diam.</p> "
+      "value": "<h1>Pentaho Demo</h1>\n<p>\n    A very simple, and I dare to say sexy, example of a Pentaho Ctools dashboard\n    that uses a lot of the capabilities of the platform.\n</p>\n<p>\n    Consider this data ficticious; It's simply estimates taken from \n    <a href=\"http://www.watch-insider.com/economy/figures-figures-figures-estimated-watches-sold-estimated-turnover-major-watch-brands-switzerland-germany/\" target=\"_blank\">this article</a>. \n    Comments are powered by <a href=\"http://disqus.com\" target=\"_blank\">Discus</a> and the related content comes from <a href=\"https://www.hodinkee.com/\" target=\"_blank\">Hodinkee's</a>\n    <a href=\"http://tumblr.hodinkee.com/\">Tumblr</a>\n</p>\n<p>You can freely explore the dataset in <a href=\"/pentaho/api/repos/xanalyzer/editor?catalog=Horlogery&cube=Horlogery\" target=\"_blank\">Pentaho Analyzer</a></p> "
      },
      {
       "name": "fontSize",
@@ -6692,7 +6692,7 @@
      },
      {
       "name": "height",
-      "value": 300,
+      "value": "",
       "type": "Integer"
      },
      {

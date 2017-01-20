@@ -110,6 +110,7 @@ from [Horlogery]]]></Query>
             <Name>Pieces (MM)</Name>
          </Column>
       </Columns>
+      <Output indexes="0" mode="exclude"/>
       <Parameters>
          <Parameter default="group" name="group" type="String"/>
       </Parameters>
