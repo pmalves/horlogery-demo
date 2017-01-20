@@ -5,6 +5,7 @@ define(['cdf/lib/jquery'], function($) {
     
     $(document).ready(function() {
         $('body').addClass('horlogery');
+        
         $('#filters').stick_in_parent({
             parent: 'body'
         });

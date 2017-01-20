@@ -480,7 +480,7 @@
      {
       "name": "postExecution",
       "type": "JavaScript",
-      "value": ""
+      "value": "// Main JS file\r\nfunction f() {\r\n    var elem = document.querySelector('.templateWrapper');\r\n    \r\n    var imgLoaded = new imagesLoaded( elem, function() {\r\n        var msnry = new Masonry( elem, {\r\n            // options\r\n            itemSelector: '.masonryItem',\r\n            columnWidth: '.masonryItem'\r\n        });\r\n    });\r\n    \r\n} "
      },
      {
       "name": "postFetch",
@@ -500,7 +500,7 @@
      {
       "name": "template",
       "type": "JavaScript",
-      "value": "function f(){\n    var template = ''+\n        '<div class=\"templateWrapper row clearfix\">' +\n        '   {{#items}} ' +\n        '       <div class=\"col-xs-6\">' +\n        '           <div class=\"article-content\">' +\n        '               {{{0}}}'+\n        '           </div>' +\n        '       </div>' +\n        '   {{/items}} '+\n        '</div>';\n      return template; \n} "
+      "value": "function f(){\n    var template = ''+\n        '<div class=\"templateWrapper row clearfix\">' +\n        '   {{#items}} ' +\n        '       <div class=\"col-xs-6 masonryItem\">' +\n        '           <div class=\"article-content\">' +\n        '               {{{0}}}'+\n        '           </div>' +\n        '       </div>' +\n        '   {{/items}} '+\n        '</div>';\n      return template; \n} "
      },
      {
       "name": "templateType",
@@ -5148,6 +5148,52 @@
  "filename": "/public/horlogery/Horlogery.cdfde",
  "layout": {
   "rows": [
+   {
+    "id": "ee465111-4b7a-471e-c9e4-1b59ccf12496",
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "imagesLoaded",
+      "type": "Id"
+     },
+     {
+      "name": "resourceFile",
+      "value": "${solution:resources/vendor/imagesloaded.pkgd.js}",
+      "type": "ResourceFile"
+     },
+     {
+      "name": "resourceType",
+      "value": "Javascript",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "07c9f0ec-6c8c-2796-ecae-1954934f83b8",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "Masonry"
+     },
+     {
+      "name": "resourceFile",
+      "type": "ResourceFile",
+      "value": "${solution:resources/vendor/masonry.pkgd.js}"
+     },
+     {
+      "name": "resourceType",
+      "type": "Label",
+      "value": "Javascript"
+     }
+    ],
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource"
+   },
    {
     "id": "a8a54903-2455-097f-bda5-f19212a794e7",
     "parent": "UnIqEiD",

@@ -443,11 +443,11 @@
     padding-bottom: 20px;
 }
 
-.horlogery .relatedArticles .col-xs-6 {
+.horlogery .relatedArticles .masonryItem {
     margin-bottom: 30px;
 }
 
-.horlogery .relatedArticles .col-xs-6:nth-child(odd) {
+.horlogery .relatedArticles .masonryItem:nth-child(odd) {
     clear: both;
 }
 
