@@ -116,6 +116,71 @@
     padding-bottom: 50px;
 }
 
+.horlogery .filters .filter-root-container {
+    background: none;
+}
+
+.horlogery .filters .filter-title {
+    display: none;
+}
+
+
+
+.horlogery .filters .filter-root-header {
+    border-color: #EAEAEA;
+    background: #F3F3F3;
+}
+
+.horlogery .filters .filter-root-header-label {
+    font-size: 24px;
+    line-height: 1.5;
+    color: #000;
+    font-weight: 700;
+}
+
+.horlogery .filters .filter-collapse-icon {
+    background-image: url(img/filter-arrow.svg);
+}
+
+.horlogery .filters .filter-overlay.expanded {
+    opacity: 0.5;
+    background: #000;
+}
+
+.horlogery .filters .filter-root-container.collapsed > .filter-root-body {
+    transition: none;
+}
+
+.horlogery .filters .filter-controls {
+    display: none;
+}
+
+.horlogery .filters .filter-root-body {
+    background: #F3F3F3;
+    border: 1px solid #EAEAEA;
+    border-top: 0 none;
+}
+
+.horlogery .filters .filter-root-container.single-select .filter-root-selection-icon.all-selected > div,
+.horlogery .filters .filter-root-container.single-select .filter-group-selection-icon.all-selected > div,
+.horlogery .filters .filter-root-container.single-select .filter-item-container.all-selected .filter-item-selection-icon > div {
+    background: #000;
+}
+
+.horlogery .filters .filter-root-control.some-selected .filter-root-selection,
+.horlogery .filters .filter-group-header.some-selected .filter-group-selection,
+.horlogery .filters .filter-item-container.some-selected,
+.horlogery .filters .filter-root-control.all-selected .filter-root-selection,
+.horlogery .filters .filter-group-header.all-selected .filter-group-selection,
+.horlogery .filters .filter-item-container.all-selected {
+    color: #000;
+    font-weight: 700;
+}
+
+.horlogery .filters .filter-root-container.single-select .filter-item-container:hover .filter-item-selection-icon {
+    border-color: #000;
+}
+
 
 /* ==================
    CHARTS
