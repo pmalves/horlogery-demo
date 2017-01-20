@@ -16,6 +16,11 @@
     -webkit-box-shadow: 0 0px 15px rgba(0,0,0,0.2);
 }
 
+.horlogery > .container > .row {
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
 .horlogery h1 {
     margin: 0 0 24px;
 }
@@ -28,10 +33,19 @@
     margin-bottom: 0;
 }
 
+.horlogery .lightBackground {    
+    background: #F3F3F3;
+}
+
 
 /* ==================
    HEADER
 ================== */
+
+.horlogery > .container > .header {
+    padding-left: 0;
+    padding-right: 0;
+}
 
 .horlogery .headerColPh {
     background: url('/pentaho-style/images/dufour.jpg') no-repeat center center;
@@ -98,19 +112,24 @@
 ================== */
 
 .horlogery .filters {
-    background: #F3F3F3;
     padding-top: 50px;
     padding-bottom: 50px;
 }
 
 
 /* ==================
-   GROUPS BAR CHART
+   CHARTS
 ================== */
 
-.horlogery .groupsBarChart {
+.horlogery .groupsBarChart,
+.horlogery .salesQuantityChart {
     padding-top: 50px;
     padding-bottom: 50px;
+}
+
+.horlogery .chartTitle {
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 
