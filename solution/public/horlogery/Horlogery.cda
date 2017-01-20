@@ -38,9 +38,9 @@
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
-         <Parameter default="jlc" name="tag" type="String"/>
+         <Parameter default="Rolex" name="brand" type="String"/>
       </Parameters>
-      <Query><![CDATA[SELECT description FROM "tumblr" where tag=${tag}]]></Query>
+      <Query><![CDATA[SELECT description FROM "tumblr" where brand=${brand} limit 10]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="groups" id="groups" type="mdx">
       <Name>groups</Name>

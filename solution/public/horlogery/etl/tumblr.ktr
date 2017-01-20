@@ -9,8 +9,8 @@
     <directory>&#x2f;public&#x2f;horlogery&#x2f;etl</directory>
     <parameters>
       <parameter>
-        <name>tag</name>
-        <default_value>rolex</default_value>
+        <name>brand</name>
+        <default_value>Rolex</default_value>
         <description/>
       </parameter>
     </parameters>
@@ -434,7 +434,7 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;01&#x2f;20 00&#x3a;01&#x3a;24.283</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;01&#x2f;20 02&#x3a;47&#x3a;13.867</modified_date>
+    <modified_date>2017&#x2f;01&#x2f;20 03&#x3a;30&#x3a;05.964</modified_date>
     <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
@@ -443,12 +443,27 @@
   <order>
     <hop>
       <from>Get data from XML</from>
-      <to>Get Variables</to>
+      <to>OUTPUT</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Get Variables</from>
-      <to>OUTPUT</to>
+      <to>Stream lookup</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get 2013 Sales Data</from>
+      <to>Stream lookup</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Stream lookup</from>
+      <to>Build URL</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Build URL</from>
+      <to>Get data from XML</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -469,7 +484,7 @@
     <addresultfile>N</addresultfile>
     <namespaceaware>N</namespaceaware>
     <ignorecomments>N</ignorecomments>
-    <readurl>N</readurl>
+    <readurl>Y</readurl>
     <validating>N</validating>
     <usetoken>N</usetoken>
     <IsIgnoreEmptyFile>N</IsIgnoreEmptyFile>
@@ -577,9 +592,9 @@
     </fields>
     <limit>0</limit>
     <loopxpath>&#x2f;rss&#x2f;channel&#x2f;item</loopxpath>
-    <IsInFields>N</IsInFields>
+    <IsInFields>Y</IsInFields>
     <IsAFile>N</IsAFile>
-    <XmlField/>
+    <XmlField>url</XmlField>
     <prunePath/>
     <shortFileFieldName/>
     <pathFieldName/>
@@ -597,7 +612,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>192</xloc>
+      <xloc>608</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
@@ -616,8 +631,8 @@
     </partitioning>
     <fields>
       <field>
-        <name>tag</name>
-        <variable>&#x24;&#x7b;tag&#x7d;</variable>
+        <name>brand</name>
+        <variable>&#x24;&#x7b;brand&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -636,7 +651,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>384</xloc>
+      <xloc>144</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
@@ -661,7 +676,280 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>576</xloc>
+      <xloc>752</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Get 2013 Sales Data</name>
+    <type>ExcelInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <header>Y</header>
+    <noempty>Y</noempty>
+    <stoponempty>N</stoponempty>
+    <filefield/>
+    <sheetfield/>
+    <sheetrownumfield/>
+    <rownumfield/>
+    <sheetfield/>
+    <filefield/>
+    <limit>0</limit>
+    <encoding/>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <accept_filenames>N</accept_filenames>
+    <accept_field/>
+    <accept_stepname/>
+    <file>
+      <name>&#x2f;tmp&#x2f;data.xslx</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>Group</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Brand</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Year</name>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Pieces</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Turnover</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Media Tag</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+    </fields>
+    <sheets>
+      <sheet>
+        <name>Sales</name>
+        <startrow>0</startrow>
+        <startcol>0</startcol>
+        </sheet>
+    </sheets>
+    <strict_types>N</strict_types>
+    <error_ignored>N</error_ignored>
+    <error_line_skipped>N</error_line_skipped>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+    <spreadsheet_type>POI</spreadsheet_type>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Stream lookup</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <from>Get 2013 Sales Data</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>brand</name>
+        <field>brand</field>
+      </key>
+      <value>
+        <name>Media Tag</name>
+        <rename>tag</rename>
+        <default>hodinkee</default>
+        <type>String</type>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Build URL</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <calculation>
+      <field_name>prepend</field_name>
+      <calc_type>CONSTANT</calc_type>
+      <field_a>http&#x3a;&#x2f;&#x2f;tumblr.hodinkee.com&#x2f;tagged&#x2f;</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>Y</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>inProgress</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>prepend</field_a>
+      <field_b>tag</field_b>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>Y</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>append</field_name>
+      <calc_type>CONSTANT</calc_type>
+      <field_a>&#x2f;rss</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>Y</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>url</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>inProgress</field_a>
+      <field_b>append</field_b>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>432</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
@@ -677,6 +965,6 @@
 <value>&#x7b;&#x22;namespace&#x22;&#x3a;&#x22;pentaho&#x22;,&#x22;id&#x22;&#x3a;&#x22;Kettle Data Service&#x22;,&#x22;name&#x22;&#x3a;&#x22;Kettle Data Service&#x22;,&#x22;description&#x22;&#x3a;&#x22;The elements describing data services based upon transformation output&#x22;,&#x22;metaStoreName&#x22;&#x3a;null&#x7d;</value>
 </attribute></group><group><name>&#x7b;&#x22;_&#x22;&#x3a;&#x22;Embedded MetaStore Elements&#x22;,&#x22;namespace&#x22;&#x3a;&#x22;pentaho&#x22;,&#x22;type&#x22;&#x3a;&#x22;Kettle Data Service&#x22;&#x7d;</name>
 <attribute><key>tumblr</key>
-<value>&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;step_name&#x22;,&#x22;value&#x22;&#x3a;&#x22;OUTPUT&#x22;&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;step_name&#x22;,&#x22;value&#x22;&#x3a;&#x22;OUTPUT&#x22;&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;name&#x22;,&#x22;value&#x22;&#x3a;&#x22;1819d586-0d8c-4106-b1c7-984701927d6b&#x22;&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;template_name&#x22;,&#x22;value&#x22;&#x3a;&#x22;default&#x22;&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;time_to_live&#x22;,&#x22;value&#x22;&#x3a;null&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;_POJO_&#x22;,&#x22;value&#x22;&#x3a;&#x22;org.pentaho.di.trans.dataservice.optimization.cache.ServiceCache&#x22;&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;type&#x22;,&#x22;value&#x22;&#x3a;null&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;enabled&#x22;,&#x22;value&#x22;&#x3a;&#x22;Y&#x22;&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;0&#x22;,&#x22;value&#x22;&#x3a;null&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;step_name&#x22;,&#x22;value&#x22;&#x3a;&#x22;OUTPUT&#x22;&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;name&#x22;,&#x22;value&#x22;&#x3a;&#x22;af128487-d4a7-465b-b421-34c6037fa2c9&#x22;&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;parameter_format&#x22;,&#x22;value&#x22;&#x3a;&#x22;&#x25;s&#x22;&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;column_name&#x22;,&#x22;value&#x22;&#x3a;&#x22;tag&#x22;&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;parameter_name&#x22;,&#x22;value&#x22;&#x3a;&#x22;tag&#x22;&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;0&#x22;,&#x22;value&#x22;&#x3a;null&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;definitions_list&#x22;,&#x22;value&#x22;&#x3a;&#x22;org.pentaho.di.trans.dataservice.optimization.pushdown.ParameterPushdown&#x24;Definition&#x22;&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;_POJO_&#x22;,&#x22;value&#x22;&#x3a;&#x22;org.pentaho.di.trans.dataservice.optimization.pushdown.ParameterPushdown&#x22;&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;type&#x22;,&#x22;value&#x22;&#x3a;null&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;enabled&#x22;,&#x22;value&#x22;&#x3a;&#x22;Y&#x22;&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;1&#x22;,&#x22;value&#x22;&#x3a;null&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;push_down_opt_meta&#x22;,&#x22;value&#x22;&#x3a;&#x22;org.pentaho.di.trans.dataservice.optimization.PushDownOptimizationMeta&#x22;&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;is_user_defined&#x22;,&#x22;value&#x22;&#x3a;&#x22;Y&#x22;&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;tumblr&#x22;,&#x22;value&#x22;&#x3a;null,&#x22;name&#x22;&#x3a;&#x22;tumblr&#x22;,&#x22;owner&#x22;&#x3a;null,&#x22;ownerPermissionsList&#x22;&#x3a;&#x5b;&#x5d;&#x7d;</value>
+<value>&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;step_name&#x22;,&#x22;value&#x22;&#x3a;&#x22;OUTPUT&#x22;&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;step_name&#x22;,&#x22;value&#x22;&#x3a;&#x22;OUTPUT&#x22;&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;name&#x22;,&#x22;value&#x22;&#x3a;&#x22;1819d586-0d8c-4106-b1c7-984701927d6b&#x22;&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;template_name&#x22;,&#x22;value&#x22;&#x3a;&#x22;default&#x22;&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;time_to_live&#x22;,&#x22;value&#x22;&#x3a;null&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;_POJO_&#x22;,&#x22;value&#x22;&#x3a;&#x22;org.pentaho.di.trans.dataservice.optimization.cache.ServiceCache&#x22;&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;type&#x22;,&#x22;value&#x22;&#x3a;null&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;enabled&#x22;,&#x22;value&#x22;&#x3a;&#x22;Y&#x22;&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;0&#x22;,&#x22;value&#x22;&#x3a;null&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;step_name&#x22;,&#x22;value&#x22;&#x3a;&#x22;OUTPUT&#x22;&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;name&#x22;,&#x22;value&#x22;&#x3a;&#x22;af128487-d4a7-465b-b421-34c6037fa2c9&#x22;&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;parameter_format&#x22;,&#x22;value&#x22;&#x3a;&#x22;&#x25;s&#x22;&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;column_name&#x22;,&#x22;value&#x22;&#x3a;&#x22;brand&#x22;&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;parameter_name&#x22;,&#x22;value&#x22;&#x3a;&#x22;brand&#x22;&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;0&#x22;,&#x22;value&#x22;&#x3a;null&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;definitions_list&#x22;,&#x22;value&#x22;&#x3a;&#x22;org.pentaho.di.trans.dataservice.optimization.pushdown.ParameterPushdown&#x24;Definition&#x22;&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;_POJO_&#x22;,&#x22;value&#x22;&#x3a;&#x22;org.pentaho.di.trans.dataservice.optimization.pushdown.ParameterPushdown&#x22;&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;type&#x22;,&#x22;value&#x22;&#x3a;null&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;enabled&#x22;,&#x22;value&#x22;&#x3a;&#x22;Y&#x22;&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;1&#x22;,&#x22;value&#x22;&#x3a;null&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;push_down_opt_meta&#x22;,&#x22;value&#x22;&#x3a;&#x22;org.pentaho.di.trans.dataservice.optimization.PushDownOptimizationMeta&#x22;&#x7d;,&#x7b;&#x22;children&#x22;&#x3a;&#x5b;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;is_user_defined&#x22;,&#x22;value&#x22;&#x3a;&#x22;Y&#x22;&#x7d;&#x5d;,&#x22;id&#x22;&#x3a;&#x22;tumblr&#x22;,&#x22;value&#x22;&#x3a;null,&#x22;name&#x22;&#x3a;&#x22;tumblr&#x22;,&#x22;owner&#x22;&#x3a;null,&#x22;ownerPermissionsList&#x22;&#x3a;&#x5b;&#x5d;&#x7d;</value>
 </attribute></group></attributes>
 </transformation>
