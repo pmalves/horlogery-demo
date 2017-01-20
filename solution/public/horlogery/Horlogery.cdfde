@@ -533,6 +533,65 @@
     "typeDesc": "Template Component"
    },
    {
+    "id": "88c98f09-ef05-d50d-6743-37f2f5309a4b",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "relatedArticle",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[\"${p:brand}\"]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(v){\n \n return \"Related articles: \" + this.dashboard.getParameterValue(\"brand\");\n \n} ",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${h:relatedArticlesTitle}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ],
+    "rowName": "Text Component"
+   },
+   {
     "id": "CHARTS",
     "name": "Charts",
     "parent": "UnIqEiD",
@@ -4385,7 +4444,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "hodinkee",
+      "value": "All",
       "type": "String"
      },
      {
@@ -6564,7 +6623,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": "relatedArticles"
+      "value": "relatedArticlesRow"
      },
      {
       "name": "height",
@@ -6594,6 +6653,132 @@
     ],
     "type": "LayoutRow",
     "typeDesc": "Row"
+   },
+   {
+    "id": "91e7acbd-a86e-b8b9-89e8-5dbf9624b7e7",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "ecb218e8-bda1-d5f5-0951-ec490899494b",
+    "properties": [
+     {
+      "name": "name",
+      "value": "relatedArticlesTitle",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": 300,
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "brandsTableTitle chartTitle",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "71978379-bb44-8192-c5d8-febd6af32b64",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "ecb218e8-bda1-d5f5-0951-ec490899494b",
+    "properties": [
+     {
+      "name": "name",
+      "value": "relatedArticles",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": 300,
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
    },
    {
     "id": "f8fb75c4-4a6a-396a-ca16-448ac1a0fda7",
