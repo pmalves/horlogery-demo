@@ -5009,7 +5009,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with set brands as Order(DESCENDANTS(${group},Group.Brand,SELF),[Measures].Turnover,BDESC)\nmember Measures.Group as [Group].parent.name\nselect NON EMPTY {\n  -- [Measures].[Group],\n  [Measures].[Turnover],\n  [Measures].[Pieces],\n  [Measures].[Avg Price Per Piece]\n} ON COLUMNS,\n  brands on ROWS\nfrom [Horlogery]"
+      "value": "with set brands as Order(DESCENDANTS(${group},Group.Brand,SELF),[Measures].Turnover,BDESC)\nmember Measures.Group as [Group].parent.name\nselect NON EMPTY {\n  -- [Measures].[Group],\n  [Measures].[Turnover],\n  [Measures].[Pieces],\n  [Measures].[Avg Price Per Piece]\n} ON COLUMNS,\n  brands on ROWS\nfrom [Horlogery]\n"
      },
      {
       "name": "parameters",
@@ -5029,7 +5029,7 @@
      {
       "name": "cdacolumns",
       "type": "CdaColumnsArray",
-      "value": "[[\"1\",\"Turnover (MM CHF)\"],[\"3\",\"Average Piece Price (x1000 CHF)\"]]"
+      "value": "[[\"0\",\"Brand\"],[\"1\",\"Turnover (MM CHF)\"],[\"3\",\"Average Piece Price (x1000 CHF)\"]]"
      },
      {
       "name": "output",
