@@ -344,6 +344,12 @@
     background: #F9F9F9;
 }
 
+.horlogery .brandsTable table > tbody > tr:hover > td {
+    background: #222;
+    color: #FFF;
+    cursor: pointer;
+}
+
 .horlogery .brandsTable table .numeric {
     text-align: right;
 }
