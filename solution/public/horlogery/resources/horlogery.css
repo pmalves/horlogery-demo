@@ -317,6 +317,11 @@
 .horlogery .relatedArticles {
 }
 
+.horlogery .relatedArticles .templateRow {
+    width: 520px;
+}
+
+
 
 /* ==================
    FOOTER

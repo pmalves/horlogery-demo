@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CDADescriptor>
    <DataSources>
-      <Connection id="brands" type="sql.jndi">
+      <Connection id="tags" type="sql.jndi">
          <Jndi>Horlogery</Jndi>
       </Connection>
       <Connection id="groups" type="mondrian.jndi">
@@ -33,12 +33,14 @@
          <Jndi>Horlogery</Jndi>
       </Connection>
    </DataSources>
-   <DataAccess access="public" connection="brands" id="brands" type="sql">
-      <Name>brands</Name>
+   <DataAccess access="public" connection="tags" id="tags" type="sql">
+      <Name>tags</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT Group, Brand, Turnover  FROM "Horlogery"]]></Query>
+      <Parameters>
+         <Parameter default="jlc" name="tag" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT description FROM "tumblr" where tag=${tag}]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="groups" id="groups" type="mdx">
       <Name>groups</Name>

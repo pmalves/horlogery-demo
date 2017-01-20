@@ -434,6 +434,105 @@
     "typeDesc": "table Component"
    },
    {
+    "id": "226e9799-02cf-ab56-edb2-d19f823c33d6",
+    "type": "ComponentsTemplateComponent",
+    "typeDesc": "Template Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "tumblr",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "dataSource",
+      "value": "tags",
+      "type": "Datasource"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${h:relatedArticles}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     },
+     {
+      "name": "modelHandler",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "template",
+      "value": "function f(){\n    var template = ''+\n        '<div class=\"templateWrapper clearfix\">' +\n        '   {{#items}} ' +\n        '       <div class=\"templateRow\">' +\n        '           {{{0}}}'+\n        '       </div>' +\n        '   {{/items}} '+\n        '</div>';\n      return template; \n} ",
+      "type": "JavaScript"
+     },
+     {
+      "name": "templateType",
+      "value": "mustache",
+      "type": "templateTypeCustom"
+     },
+     {
+      "name": "events",
+      "value": "[]",
+      "type": "EditorValuesArray"
+     },
+     {
+      "name": "formatters",
+      "value": "[]",
+      "type": "EditorValuesArray"
+     },
+     {
+      "name": "rootElement",
+      "value": "items",
+      "type": "String"
+     },
+     {
+      "name": "extendableOptions",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ],
+    "rowName": "Template Component"
+   },
+   {
     "id": "CHARTS",
     "name": "Charts",
     "parent": "UnIqEiD",
@@ -4301,7 +4400,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": "brands"
+      "value": "tags"
      },
      {
       "name": "access",
@@ -4316,12 +4415,12 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "SELECT Group, Brand, Turnover  FROM \"Horlogery\""
+      "value": "SELECT description FROM \"tumblr\" where tag=${tag}"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[]"
+      "value": "[[\"tag\",\"jlc\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "cdacalculatedcolumns",
