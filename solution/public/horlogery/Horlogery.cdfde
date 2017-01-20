@@ -534,62 +534,62 @@
    },
    {
     "id": "88c98f09-ef05-d50d-6743-37f2f5309a4b",
-    "type": "ComponentstextComponent",
-    "typeDesc": "Text Component",
     "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "relatedArticle",
-      "type": "Id"
+      "type": "Id",
+      "value": "relatedArticle"
      },
      {
       "name": "listeners",
-      "value": "[\"${p:brand}\"]",
-      "type": "Listeners"
+      "type": "Listeners",
+      "value": "[\"${p:brand}\"]"
      },
      {
       "name": "expression",
-      "value": "function f(v){\n \n return \"Related articles: \" + this.dashboard.getParameterValue(\"brand\");\n \n} ",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": "function f(v){\n \n return \"Related articles: \" + this.dashboard.getParameterValue(\"brand\");\n \n} "
      },
      {
       "name": "priority",
-      "value": 5,
-      "type": "Integer"
+      "type": "Integer",
+      "value": 5
      },
      {
       "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "htmlObject",
-      "value": "${h:relatedArticlesTitle}",
-      "type": "HtmlObject"
+      "type": "HtmlObject",
+      "value": "${h:relatedArticlesTitle}"
      },
      {
       "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "true"
      },
      {
       "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": ""
      },
      {
       "name": "tooltip",
-      "value": "",
-      "type": "Html"
+      "type": "Html",
+      "value": ""
      }
     ],
-    "rowName": "Text Component"
+    "rowName": "Text Component",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component"
    },
    {
     "id": "CHARTS",
@@ -4433,37 +4433,37 @@
    },
    {
     "id": "1d06c419-ddcc-32b7-dfe0-db76d506c5c4",
-    "type": "ComponentsParameter",
-    "typeDesc": "Simple parameter",
     "parent": "GENERIC",
     "properties": [
      {
       "name": "name",
-      "value": "brand",
-      "type": "Id"
+      "type": "Id",
+      "value": "brand"
      },
      {
       "name": "propertyValue",
-      "value": "All",
-      "type": "String"
+      "type": "String",
+      "value": "All"
      },
      {
       "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
      },
      {
       "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "false"
      },
      {
       "name": "public",
-      "value": "false",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "false"
      }
     ],
-    "rowName": "Simple Parameter"
+    "rowName": "Simple Parameter",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
    }
   ]
  },
@@ -6656,129 +6656,129 @@
    },
    {
     "id": "91e7acbd-a86e-b8b9-89e8-5dbf9624b7e7",
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column",
     "parent": "ecb218e8-bda1-d5f5-0951-ec490899494b",
     "properties": [
      {
       "name": "name",
-      "value": "relatedArticlesTitle",
-      "type": "Id"
+      "type": "Id",
+      "value": "relatedArticlesTitle"
      },
      {
       "name": "bootstrapExtraSmall",
-      "value": "12",
-      "type": "String"
+      "type": "String",
+      "value": "12"
      },
      {
       "name": "bootstrapSmall",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapMedium",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapLarge",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapCssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "height",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
+      "type": "Color",
+      "value": ""
      },
      {
       "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
+      "type": "RoundCorners",
+      "value": ""
      },
      {
       "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
+      "type": "TextAlign",
+      "value": ""
      },
      {
       "name": "cssClass",
-      "value": "brandsTableTitle chartTitle",
-      "type": "String"
+      "type": "String",
+      "value": "brandsTableTitle chartTitle"
      }
-    ]
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
    },
    {
     "id": "71978379-bb44-8192-c5d8-febd6af32b64",
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column",
     "parent": "ecb218e8-bda1-d5f5-0951-ec490899494b",
     "properties": [
      {
       "name": "name",
-      "value": "relatedArticles",
-      "type": "Id"
+      "type": "Id",
+      "value": "relatedArticles"
      },
      {
       "name": "bootstrapExtraSmall",
-      "value": "12",
-      "type": "String"
+      "type": "String",
+      "value": "12"
      },
      {
       "name": "bootstrapSmall",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapMedium",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapLarge",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapCssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "height",
-      "value": 300,
-      "type": "Integer"
+      "type": "Integer",
+      "value": 300
      },
      {
       "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
+      "type": "Color",
+      "value": ""
      },
      {
       "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
+      "type": "RoundCorners",
+      "value": ""
      },
      {
       "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
+      "type": "TextAlign",
+      "value": ""
      },
      {
       "name": "cssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      }
-    ]
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
    },
    {
     "id": "f8fb75c4-4a6a-396a-ca16-448ac1a0fda7",
@@ -6812,7 +6812,7 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": ""
+      "value": "comments"
      }
     ],
     "type": "LayoutRow",
