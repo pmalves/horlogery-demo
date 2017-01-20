@@ -16,6 +16,11 @@
     -webkit-box-shadow: 0 0px 15px rgba(0,0,0,0.2);
 }
 
+.horlogery > .container > .row {
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
 .horlogery h1 {
     margin: 0 0 24px;
 }
@@ -36,6 +41,11 @@
 /* ==================
    HEADER
 ================== */
+
+.horlogery > .container > .header {
+    padding-left: 0;
+    padding-right: 0;
+}
 
 .horlogery .headerColPh {
     background: url('/pentaho-style/images/dufour.jpg') no-repeat center center;
