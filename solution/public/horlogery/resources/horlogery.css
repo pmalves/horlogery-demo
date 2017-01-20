@@ -451,7 +451,8 @@
 }
 
 .horlogery .relatedArticles .article-content {
-    background: #F3F3F3;
+    background: #FFF;
+    border: 1px solid #EAEAEA;
     border-radius: 0;
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
