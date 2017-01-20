@@ -6463,6 +6463,140 @@
     "typeDesc": "Row"
    },
    {
+    "id": "f8fb75c4-4a6a-396a-ca16-448ac1a0fda7",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "comments",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "edb81cc2-ffd5-198e-0117-9ffff8a4ead6",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "f8fb75c4-4a6a-396a-ca16-448ac1a0fda7",
+    "properties": [
+     {
+      "name": "name",
+      "value": "commentsCol",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "66a919aa-a099-b9d2-5209-24d3a638612e",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "edb81cc2-ffd5-198e-0117-9ffff8a4ead6",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<div id=\"disqus_thread\"></div>\n<script>\n\n/**\n*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.\n*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/\n/*\nvar disqus_config = function () {\nthis.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable\nthis.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable\n};\n*/\n(function() { // DON'T EDIT BELOW THIS LINE\nvar d = document, s = d.createElement('script');\ns.src = '//horlogery-demo.disqus.com/embed.js';\ns.setAttribute('data-timestamp', +new Date());\n(d.head || d.body).appendChild(s);\n})();\n</script>\n<noscript>Please enable JavaScript to view the <a href=\"https://disqus.com/?ref_noscript\">comments powered by Disqus.</a></noscript>\n                                ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "8e20d533-c58e-b52b-07ab-8cffa51fcae2",
     "parent": "UnIqEiD",
     "properties": [
